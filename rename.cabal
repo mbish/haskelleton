@@ -1,0 +1,30 @@
+-- Instructions on how to write this file are in the Cabal
+-- documentation, which can be found here:
+--   http://haskell.org/cabal/release/cabal-latest/doc/users-guide/
+
+name: rename
+version: 1.0.0.2
+license-file: LICENSE
+author: Mark Bishop
+stability: stable
+category: Console, Text
+cabal-version: >= 1.6
+build-type: Simple
+
+Description:
+  rename insert description here
+
+source-repository head
+  type:     darcs
+  location: http://github.com/mbish/rename
+
+flag threaded
+  default: False
+
+executable rename
+  hs-source-dirs: src
+  main-is: main.hs
+  build-depends: base >= 4.2 && < 5
+
+  if flag(threaded)
+     ghc-options: -threaded
